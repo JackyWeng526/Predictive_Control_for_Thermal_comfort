@@ -1,6 +1,11 @@
 # Predictive_Control_for_Thermal_comfort
 This repository aims to utilize building automation system and model predict control for human thermal comfort in office building.
 
+In this case, we were fortunate to have a real commercial building as a study case in Taiwan.
+
+We designed a Model Predictive Control module for indoor thermal comfort and fan coil units (FCUs) management.
+
+
 ## Model Predictive Control
 ![Model_Predictive_Control](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png)
 
