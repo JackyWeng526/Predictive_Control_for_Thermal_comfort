@@ -29,8 +29,9 @@ The Taipei weather data of 2021 is showed below.
 ![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG)
 
 ### Taiwanese indoor comfort range with adaptive model
-By ASHRAE 55[1](https://en.wikipedia.org/wiki/ASHRAE_55) and local research[2](https://www.sciencedirect.com/science/article/abs/pii/S0306261912000967), we can have the Taiwanese adaptive comfort range.
+By ASHRAE 55[[1]](https://en.wikipedia.org/wiki/ASHRAE_55) and local research[[2]](https://www.sciencedirect.com/science/article/abs/pii/S0306261912000967), we can have the Taiwanese adaptive comfort range.
 ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
+
 The adaptive comfort range can help us easily set the target of HVAC setpoint temperature.
 
 ### Building Dataset
