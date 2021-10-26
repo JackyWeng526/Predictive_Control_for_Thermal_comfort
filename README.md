@@ -21,8 +21,14 @@ Some of these components will introduce in the following sections.
 The real-time data used in this module includes weather dataset from Central Weather Bureau and building dataset from BAS.
 
 ### Taiwan micro-climate and indoor comfort range
+The weather data could be downloaded on the [CWB website](https://e-service.cwb.gov.tw/HistoryDataQuery/).
+
+Or you can try the downloader in [Taiwan_Weather_Data](https://github.com/JackyWeng526/Taiwan_Weather_Data) repository on my GitHub.
+
+The Taipei weather data of 2021 is showed below.
 ![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG)
 
+By ASHRAE 55 and local research[1], we can have the Taiwanese adaptive comfort range.
 ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
 
 ### Building Dataset
