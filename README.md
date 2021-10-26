@@ -1,17 +1,17 @@
 # Predictive_Control_for_Thermal_comfort
 This repository aims to utilize building automation system and model predict control for human thermal comfort in office building.
 
-In this case, we were fortunate to have a real commercial building as a study case in Taiwan.
+In this case, we are fortunate to have a real commercial building as a study case in Taiwan.
 
-We designed a Model Predictive Control module for indoor thermal comfort and fan coil units (FCUs) management.
+We design a Model Predictive Control module for indoor thermal comfort and fan coil units (FCUs) management.
 
 
 ## Model Predictive Control
 MPC method is commonly used in the building automation field.
 
-Through the existed Building Automation System (BAS) of the building, we are able to construct a data-driven MPC workframe.
+Through the existed Building Automation System (BAS) of the building, we are able to construct a data-driven MPC work-frame.
 
-The workframe connects real-time data, predictive algorithm, optimizer, and automated controller.
+The work-frame comprises real-time data, predictive algorithm, optimizer, and automated controller.
 
 Some of these components will introduce in the following sections.
 ![Model_Predictive_Control](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png)
@@ -30,18 +30,21 @@ The Taipei weather data of 2021 is showed below.
 
 ### Taiwanese indoor comfort range with adaptive model
 By ASHRAE 55[[1]](https://en.wikipedia.org/wiki/ASHRAE_55) and local research[[2]](https://www.sciencedirect.com/science/article/abs/pii/S0306261912000967), we can have the Taiwanese adaptive comfort range.
+
+The adaptive comfort range can help us easily determine the target of HVAC setpoint temperature.
 ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
 
-The adaptive comfort range can help us easily set the target of HVAC setpoint temperature.
-
 ### Building Dataset
-The building dataset contains not only the FCU operation record but also AHU operation record and CO2 concentration.
+Beside the weather data, there is building dataset containing the FCU and AHU operation records and CO2 concentration values.
 ![FCU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG)
 ![AHU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG)
 ![CO2_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG)
 
 ## Indoor Thermal Comfort Control
 ![PET_before_after](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/control_before_after.PNG)
+
+
+### Prediction
 
 
 ## Results 
