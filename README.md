@@ -98,13 +98,15 @@ There must be other synergy predictive models for PET or indoor temperature pred
 
 However, the models' construction is very similar and we don't elaborate here.
 
-In conclusion, we had the performance of the comfort control module on a certain floor as well as the employees' responses to HVAC management.
+In conclusion, we had the performance of the comfort control module on a certain floor as well as the employees' complaints to HVAC management.
 
-After the module was imported, the indoor PET was almost well-controlled and the complaints from employees were going down.
+After the module was imported, the indoor PET was almost well-controlled and the number of employees' complaints reduced apparently.
 
 ![Results](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG)
 
 
+## Authors
+- [@Jacky Weng](https://github.com/JackyWeng526)
 
 ## Acknowledgement
-(Here is just the sample not the real structure in the field)
+The module here is just the sample, not the real one in the field.
