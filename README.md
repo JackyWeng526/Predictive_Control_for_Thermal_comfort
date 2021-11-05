@@ -59,7 +59,7 @@ The adaptive comfort range can help us easily determine the target of HVAC setpo
 ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
 
 
-## Optimal SP Strategy and Automated Controller
+## Optimal SP Strategy from Predictive Algorithm and Automated Controller
 ### Automated Controller
 This section will vary a lot with the corresponding case study.
 
