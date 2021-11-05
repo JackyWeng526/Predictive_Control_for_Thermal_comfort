@@ -76,7 +76,7 @@ The test data predictions performed: r<sup>2</sup> = 0.64; MAE = 0.04.
 
 While this predictive model only has to be precise at the time we need, we can use some schedule rules to optimize predictive strategy for such a special application.
 
-For example, the FCUs will be shut down or turned to 25 <sup>o</sup>C at night as well as on weekends.
+For example, the FCUs will be shut down or turned to 25 <sup>o</sup>C at night and on weekends.
 
 So, the strategy could be adjusted (r<sup>2</sup> = 0.84; MAE = 0.13) before being packaged and transmitted to the controller. 
 
