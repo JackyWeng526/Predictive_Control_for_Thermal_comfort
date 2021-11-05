@@ -26,8 +26,8 @@ data_path = os.path.join(BATH_PATH, "..", "data")
 
 # %%
 # Read data
-def get_PET_history(floor):
-    path = os.path.join(data_path, F"PET_{floor}F_data-20210401_20210831.csv")
+def get_PET_history():
+    path = os.path.join(data_path, "PET_data-20210401_20210831.csv")
     PET_data = pd.read_csv(path)
     PET_data["Time"] = pd.to_datetime(PET_data["Time"])
     PET_data.sort_values(by="Time", inplace=True)
@@ -36,8 +36,8 @@ def get_PET_history(floor):
     return PET_data
 
 
-def get_FCU_history(floor):
-    path = os.path.join(data_path, F"FCU_{floor}F_data-20210201_20210831.csv")
+def get_FCU_history():
+    path = os.path.join(data_path, "FCU_data-20210201_20210831.csv")
     FCU_data = pd.read_csv(path)
     FCU_data["Time"] = pd.to_datetime(FCU_data["Time"])
     FCU_data.sort_values(by="Time", inplace=True)
@@ -46,8 +46,8 @@ def get_FCU_history(floor):
     return FCU_data
 
 
-def get_AHU_history(floor):
-    path = os.path.join(data_path, F"AHU_{floor}F_data-20210201_20210831.csv")
+def get_AHU_history():
+    path = os.path.join(data_path, F"AHU_data-20210201_20210831.csv")
     AHU_data = pd.read_csv(path)
     AHU_data["Time"] = pd.to_datetime(AHU_data["Time"])
     AHU_data.sort_values(by="Time", inplace=True)
@@ -56,14 +56,13 @@ def get_AHU_history(floor):
     return AHU_data
 
 
-def get_CO2_history(floor):
-    path = os.path.join(data_path, F"CDS_{floor}F_data-20210201_20210831.csv")
+def get_CO2_history():
+    path = os.path.join(data_path, F"CDS_data-20210201_20210831.csv")
     CDS_data = pd.read_csv(path)
     CDS_data["Time"] = pd.to_datetime(CDS_data["Time"])
     CDS_data.sort_values(by="Time", inplace=True)
     CDS_data.set_index("Time", inplace=True)
-    if floor == 8:
-        CDS_data = CDS_data.drop("CDS_108_8-CO2", axis=1) # deviation in this sensor data 
+    CDS_data = CDS_data.drop("CDS_108_8-CO2", axis=1) # deviation in this sensor data 
     CDS_data = CDS_data.loc[~CDS_data.index.duplicated(keep='first')]
     CDS_data["Floor_CO2_mean"] = CDS_data.mean(axis=1)
     return CDS_data.loc[:, ["Floor_CO2_mean"]]
@@ -79,26 +78,25 @@ def get_CWB_history():
     return CWB_data
 
 
-def merge_data(floor):
+def merge_data():
     CWB_data = get_CWB_history()
-    FCU_data = get_FCU_history(floor)
-    AHU_data = get_AHU_history(floor)
-    CDS_data = get_CO2_history(floor)
-    PET_data = get_PET_history(floor)
+    FCU_data = get_FCU_history()
+    AHU_data = get_AHU_history()
+    CDS_data = get_CO2_history()
+    PET_data = get_PET_history()
     ALL_data = pd.concat([CWB_data, FCU_data, AHU_data, CDS_data, PET_data], axis=1, join="outer")
     # Drop insignificant or noisy variable 
     ALL_data = ALL_data.drop(["RH", "GloblRad", "PAH-OA_FLOW", "PAH-FAN_RUN_CMD", "PAH-DMP_POS", "PET_Target"], axis=1)
     return ALL_data.dropna()
 
-floor = 8
-display(merge_data(floor))
-merge_data(floor).iplot()
+display(merge_data())
+merge_data().iplot()
 
 # %%
 # Create timeseries features (here is just the sample not the real structure in the field)
-def get_train_feature(target, floor, future_step=1):
+def get_train_feature(target, future_step=1):
     # Preparing features (can also add some features if you'd like to try other models)
-    data = merge_data(floor)
+    data = merge_data()
     
     # data.insert(loc=0, column="DoY", value=(data.index.dayofyear).values) # seems not significant
     data.insert(loc=1, column="Hour", value=(data.index.hour).values + (pd.Series(data.index).dt.minute).values/60)
@@ -135,13 +133,12 @@ def generator(data, start, end):
     Y = data.loc[start:end, data.columns.str.contains(target)]
     return X, Y
 
-floor = 8
 target = "SP_Target"
 future_step = 6 * 1 # timestep is 10 min, 6 timestep for 1 hr lag-feature
 
-# data = get_train_feature(target, floor, future_step) # can also try training data without scaled
-data = data_scale(get_train_feature(target, floor, future_step))[0]
-pars = data_scale(get_train_feature(target, floor, future_step))[1]
+# data = get_train_feature(target, future_step) # can also try training data without scaled
+data = data_scale(get_train_feature(target, future_step))[0]
+pars = data_scale(get_train_feature(target, future_step))[1]
 
 # train data
 start = "2021-04-01"
@@ -213,6 +210,7 @@ model.summary()
 
 
 # %%
+# Re-scaled the prediction
 plot_df = test_y * (pars["data_max"][target] - pars["data_min"][target]) + pars["data_min"][target]
 plot_df.iplot(title=F"{target}-real vs prediction")
 
