@@ -1,10 +1,12 @@
 # Predictive_Control_for_Thermal_comfort
-This repository aims to utilize building automation system and model predict control for human thermal comfort in office building.
+This research aims to utilize building automation system and model predict control for human thermal comfort in office building.
 
 In this case, we are fortunate to have a real commercial building as a study case in Taiwan.
 
 We design a Model Predictive Control module for indoor thermal comfort and fan coil units (FCUs) management.
 
+# Methodology
+The methods, theories, and the workflow of this research will be demonstrated in the following sections.
 
 ## Model Predictive Control
 MPC method is commonly used in the building automation field.
@@ -67,8 +69,8 @@ Our controller is built by MQTT, AWS, and the existing BAS in the field, please 
 
 The privacy and security of the internet and IoT protocols are well-considered.
 
-
-### SP prediction
+# Results of Model Predictions and Comfort Control 
+## SP prediction
 We used Neural Network for predictive algorithm construction, and the results are shown below.
 
 The test data predictions performed: r<sup>2</sup> = 0.64; MAE = 0.04.
