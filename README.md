@@ -18,8 +18,7 @@ The framework comprises real-time data, predictive algorithm, optimizer, and aut
 Some of these components will introduce in the following sections.
 
 (BTW, some of the details won't be elaborated because of the confidential protocol.)
-<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png" align="middle" height="50%" width="50%" ></a>
-![Model_Predictive_Control](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png)
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png" align="middle" height="70%" width="70%" ></a>
 
 
 ## Input data
@@ -36,18 +35,23 @@ Or you can try the downloader in [Taiwan_Weather_Data](https://github.com/JackyW
 The Taipei weather data of 2021 is showed below.
 
 You can also gather the real-time data and the weather prediction through the [open-API](https://opendata.cwb.gov.tw/dist/opendata-swagger.html?urls.primaryName=openAPI#/%E9%A0%90%E5%A0%B1/get_v1_rest_datastore_F_D0047_069). (Maybe need registration.)
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG" align="middle" height="70%" width="70%" ></a>
 ![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG)
 
 
 ### Building Dataset
 Beside the weather data, there is building dataset containing the FCU and AHU operation records and CO2 concentration values.
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG" align="middle" height="70%" width="70%" ></a>
 ![FCU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG" align="middle" height="70%" width="70%" ></a>
 ![AHU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG" align="middle" height="70%" width="70%" ></a>
 ![CO2_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG)
 
 Beside the dataset introduced above, we also have the control strategy and suggestion provided by the [physical model](https://github.com/JackyWeng526/Office_Data_Application).
 
 The PET and setpoint temperature targets would both be part of the training dataset.
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/PET_and_SP_Target_by_physical_model.PNG" align="middle" height="70%" width="70%" ></a>
 ![Target_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/PET_and_SP_Target_by_physical_model.PNG)
 
 
@@ -59,6 +63,7 @@ To conduct MPC framework for HVAC and comfort control, we have the building envi
 By ASHRAE 55[[1]](https://en.wikipedia.org/wiki/ASHRAE_55) and local research[[2]](https://www.sciencedirect.com/science/article/abs/pii/S0306261912000967), we can have the Taiwanese adaptive comfort range.
 
 The adaptive comfort range can help us easily determine the target of HVAC setpoint temperature.
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG" align="middle" height="70%" width="70%" ></a>
 ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
 
 
@@ -75,6 +80,7 @@ The privacy and security of the internet and IoT protocols are well-considered.
 We used Neural Network for predictive algorithm construction, and the results are shown below.
 
 The test data predictions performed: r<sup>2</sup> = 0.64; MAE = 0.04.
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_1.png" align="middle" height="70%" width="70%" ></a>
 ![NN_result_1](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_1.png)
 
 While this predictive model only has to be precise at the time we need, we can use some schedule rules to optimize predictive strategy for such a special application.
@@ -92,7 +98,7 @@ plot_df["pred"] = np.where(
         plot_df.index.hour>21)), 
     25, plot_df["pred"])
 ```
-
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_2.png" align="middle" height="70%" width="70%" ></a>
 ![NN_result_2](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_2.png)
 
 
@@ -105,6 +111,7 @@ In conclusion, we had the performance of the comfort control module on a certain
 
 After the module was imported, the indoor PET was almost well-controlled and the number of employees' complaints reduced apparently.
 
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG" align="middle" height="70%" width="70%" ></a>
 ![Results](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG)
 
 
