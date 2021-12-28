@@ -18,6 +18,7 @@ The framework comprises real-time data, predictive algorithm, optimizer, and aut
 Some of these components will introduce in the following sections.
 
 (BTW, some of the details won't be elaborated because of the confidential protocol.)
+<a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png" align="middle" height="50%" width="50%" ></a>
 ![Model_Predictive_Control](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png)
 
 
