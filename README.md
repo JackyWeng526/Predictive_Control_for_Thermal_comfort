@@ -19,7 +19,7 @@ Some of these components will introduce in the following sections.
 
 (BTW, some of the details won't be elaborated because of the confidential protocol.)
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png" align="middle" height="70%" width="70%" ></a>
-
+<!-- ![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/MPC_construction_for_Thermal_Comfort.png) -->
 
 ## Input data
 The data used in this module includes weather dataset from Central Weather Bureau and building dataset from BAS.
@@ -36,7 +36,7 @@ The Taipei weather data of 2021 is showed below.
 
 You can also gather the real-time data and the weather prediction through the [open-API](https://opendata.cwb.gov.tw/dist/opendata-swagger.html?urls.primaryName=openAPI#/%E9%A0%90%E5%A0%B1/get_v1_rest_datastore_F_D0047_069). (Maybe need registration.)
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG" align="middle" height="70%" width="70%" ></a>
-![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG)
+<!-- ![Weather_Data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_weather_NewTaipeiCity.PNG) -->
 
 
 ### Building Dataset
@@ -52,7 +52,7 @@ Beside the dataset introduced above, we also have the control strategy and sugge
 
 The PET and setpoint temperature targets would both be part of the training dataset.
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/PET_and_SP_Target_by_physical_model.PNG" align="middle" height="70%" width="70%" ></a>
-![Target_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/PET_and_SP_Target_by_physical_model.PNG)
+<!-- ![Target_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/PET_and_SP_Target_by_physical_model.PNG) -->
 
 
 ## Optimizer and boundary conditions
