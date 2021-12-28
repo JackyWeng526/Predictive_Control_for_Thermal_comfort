@@ -42,11 +42,11 @@ You can also gather the real-time data and the weather prediction through the [o
 ### Building Dataset
 Beside the weather data, there is building dataset containing the FCU and AHU operation records and CO2 concentration values.
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG" align="middle" height="70%" width="70%" ></a>
-![FCU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG)
+<!-- ![FCU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/FCU_data.PNG) -->
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG" align="middle" height="70%" width="70%" ></a>
-![AHU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG)
+<!-- ![AHU_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/AHU_data.PNG) -->
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG" align="middle" height="70%" width="70%" ></a>
-![CO2_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG)
+<!-- ![CO2_data](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/CO2_data.PNG) -->
 
 Beside the dataset introduced above, we also have the control strategy and suggestion provided by the [physical model](https://github.com/JackyWeng526/Office_Data_Application).
 
@@ -64,7 +64,7 @@ By ASHRAE 55[[1]](https://en.wikipedia.org/wiki/ASHRAE_55) and local research[[2
 
 The adaptive comfort range can help us easily determine the target of HVAC setpoint temperature.
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG" align="middle" height="70%" width="70%" ></a>
-![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG)
+<!-- ![Local_Comfort_Range](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Taiwan_PET_adaptive_model.PNG) -->
 
 
 ## Optimal SP Strategy from Predictive Algorithm and Automated Controller
@@ -81,7 +81,7 @@ We used Neural Network for predictive algorithm construction, and the results ar
 
 The test data predictions performed: r<sup>2</sup> = 0.64; MAE = 0.04.
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_1.png" align="middle" height="70%" width="70%" ></a>
-![NN_result_1](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_1.png)
+<!-- ![NN_result_1](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_1.png) -->
 
 While this predictive model only has to be precise at the time we need, we can use some schedule rules to optimize predictive strategy for such a special application.
 
@@ -99,7 +99,7 @@ plot_df["pred"] = np.where(
     25, plot_df["pred"])
 ```
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_2.png" align="middle" height="70%" width="70%" ></a>
-![NN_result_2](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_2.png)
+<!-- ![NN_result_2](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/NN_result_2.png) -->
 
 
 ## Indoor Thermal Comfort Control
@@ -112,7 +112,7 @@ In conclusion, we had the performance of the comfort control module on a certain
 After the module was imported, the indoor PET was almost well-controlled and the number of employees' complaints reduced apparently.
 
 <a href="url"><img src="https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG" align="middle" height="70%" width="70%" ></a>
-![Results](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG)
+<!-- ![Results](https://github.com/JackyWeng526/Predictive_Control_for_Thermal_comfort/blob/main/docs/Results.PNG) -->
 
 
 ## Authors
